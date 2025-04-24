@@ -129,6 +129,7 @@
     if (reducedMotion) quick = true;
     if (!root) return;
     root.addEventListener('change', onchange);
+    selected = options.at(root.selectedIndex);
   });
 
   onDestroy(() => {

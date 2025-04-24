@@ -23,7 +23,7 @@
   // MARK: Variables
   // ------------------------------------------------
   let debug = $state(false);
-  let expand = $state(true);
+  let expand = $state(false);
   let value = $state('');
   let passwordVisible = $state(false);
   let passwordInputType: 'text' | 'password' = $derived(passwordVisible ? 'text' : 'password');
