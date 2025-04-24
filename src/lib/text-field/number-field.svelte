@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-  import { type Snippet, getContext, onMount } from 'svelte';
+  import { type Snippet, getContext } from 'svelte';
   import '@material/web/textfield/filled-text-field.js';
   import '@material/web/textfield/outlined-text-field.js';
   import { debounce, setSlots } from '../internal/index.js';
@@ -257,14 +257,17 @@
     settings = getContext<ComponentSettings>('ComponentSettings')?.textField;
   }
 
+  if (settings) {
+    noAsterisk = settings.noAsterisk || noAsterisk;
+    outlined = settings.variant === 'outlined' || outlined;
+    noSpinner = settings.noSpinner || noSpinner;
+  }
+
   // MARK: Derived
   // ------------------------------------------------
   let displayValue = $derived.by(() => {
     if (value === undefined) return '';
     const convert = toDisplay || ((x: number) => x);
-
-    // console.log(value);
-    // console.log(convert(value));
 
     return `${convert(value)}`;
   });
@@ -289,16 +292,6 @@
     const convert = toValue || ((x: number) => x);
     value = convert(root.valueAsNumber);
   }, 1500);
-
-  // MARK: Lifecycle
-  // ------------------------------------------------
-  onMount(() => {
-    if (settings) {
-      noAsterisk = settings.noAsterisk || noAsterisk;
-      outlined = settings.variant === 'outlined' || outlined;
-      noSpinner = settings.noSpinner || noSpinner;
-    }
-  });
 </script>
 
 {#if outlined}

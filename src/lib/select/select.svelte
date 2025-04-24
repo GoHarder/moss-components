@@ -103,6 +103,11 @@
     settings = getContext<ComponentSettings>('ComponentSettings')?.select;
   }
 
+  if (settings) {
+    noAsterisk = settings.noAsterisk;
+    outlined = settings.variant === 'outlined' || outlined;
+  }
+
   // MARK: Events
   // ------------------------------------------------
   async function onchange(_event: Event) {
@@ -122,12 +127,6 @@
   // ------------------------------------------------
   onMount(() => {
     if (reducedMotion) quick = true;
-
-    if (settings) {
-      noAsterisk = settings.noAsterisk;
-      outlined = settings.variant === 'outlined' || outlined;
-    }
-
     if (!root) return;
     root.addEventListener('change', onchange);
   });
