@@ -1,0 +1,90 @@
+@use 'root';
+@use 'reset';
+
+body {
+  // Text
+  // font-family: var(--md-ref-typeface-brand);
+
+  font-family: var(--md-sys-typescale-body-medium-font);
+  font-size: var(--md-sys-typescale-body-medium-size);
+  font-weight: var(--md-sys-typescale-body-medium-weight);
+  line-height: var(--md-sys-typescale-body-medium-line-height);
+  letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+
+  // Appearance
+  background-color: var(--md-sys-color-background);
+  color: var(--md-sys-color-on-background);
+}
+
+.elevated-card {
+  --md-elevation-level: 1;
+  position: relative;
+  background-color: var(--md-sys-color-surface-container-low);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: 16px;
+}
+
+.filled-card {
+  background-color: var(--md-sys-color-surface-container-highest);
+  border-radius: var(--md-sys-shape-corner-medium);
+  padding: 16px;
+}
+
+.outlined-card {
+  background-color: var(--md-sys-color-surface);
+  border-radius: var(--md-sys-shape-corner-medium);
+  border-color: var(--md-sys-color-outline-variant);
+  border-width: 1px;
+  border-style: solid;
+  padding: 16px;
+}
+
+// @media (prefers-color-scheme: dark) {
+//   .language-xml {
+//     .hljs-name {
+//       color: #7cb4c3;
+//     }
+
+//     .hljs-tag {
+//       color: #717781;
+//     }
+
+//     .hljs-string {
+//       color: #c67f68;
+//     }
+
+//     .hljs-attr {
+//       color: #a9caeb;
+//     }
+//   }
+
+//   .language-javascript {
+//     .hljs-title.function_ {
+//       color: #ffdf9f;
+//     }
+//   }
+
+//   .language-css {
+//     .hljs-selector-pseudo,
+//     .hljs-selector-class {
+//       color: #ffdf9f;
+//     }
+
+//     .hljs-attribute {
+//       color: #a9caeb;
+//     }
+
+//     .hljs-number {
+//       color: #c67f68;
+//     }
+//   }
+
+//   .hljs {
+//     background: #121416;
+//     color: #c2c7cf;
+//   }
+
+//   .hljs-comment {
+//     color: #8b919b;
+//   }
+// }
