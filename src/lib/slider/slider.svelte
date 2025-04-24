@@ -4,7 +4,7 @@
 
   // MARK: Types
   // ------------------------------------------------
-  import { MdSlider } from '@material/web/slider/slider.js';
+  import { type MdSlider } from '@material/web/slider/slider.js';
 
   type Props = {
     /** The slider minimum value*/

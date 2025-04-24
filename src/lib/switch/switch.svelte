@@ -4,7 +4,7 @@
 
   // MARK: Types
   // ------------------------------------------------
-  import { MdSwitch } from '@material/web/switch/switch.js';
+  import { type MdSwitch } from '@material/web/switch/switch.js';
 
   type Props = {
     /**

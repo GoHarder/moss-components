@@ -5,7 +5,7 @@
   // MARK: Types
   // ------------------------------------------------
   import { type Snippet } from 'svelte';
-  import { MdSubMenu } from '@material/web/menu/sub-menu.js';
+  import { type MdSubMenu } from '@material/web/menu/sub-menu.js';
 
   type Props = {
     /** The child elements to render. */
