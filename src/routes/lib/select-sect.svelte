@@ -33,14 +33,20 @@
 
   let value: string | undefined = $state();
   let selected: (typeof options)[number] | undefined = $state();
-
   let diameter = $derived(selected ? selected.diameter : undefined);
+
+  let roping: number | undefined = $state();
 
   $inspect(value).with((type, value) => {
     if (!debug) return;
     console.log('value:   ', type, value);
     console.log('selected:', $state.snapshot(selected));
     console.log('diameter:', $state.snapshot(diameter));
+  });
+
+  $inspect(roping).with((type, roping) => {
+    if (!debug) return;
+    console.log('roping:  ', type, roping, typeof roping);
   });
 
   // MARK: Contexts
@@ -74,6 +80,10 @@
               <div data-slot="end">{diameter}"</div>
             </Option>
           {/each}
+        </Select>
+        <Select label="Roping" outlined bind:value={roping} type="number">
+          <Option value="1">1:1</Option>
+          <Option value="2">2:1</Option>
         </Select>
       {:else}
         <Select label="Label" value="2" outlined required>
