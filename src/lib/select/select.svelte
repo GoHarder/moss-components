@@ -129,6 +129,7 @@
     if (reducedMotion) quick = true;
     if (!root) return;
     root.addEventListener('change', onchange);
+    if (!value) return;
     selected = options.at(root.selectedIndex);
   });
 
