@@ -297,7 +297,6 @@
 {#if outlined}
   <md-outlined-text-field
     bind:this={root}
-    style="text-align: right"
     type="number"
     suffix-text={iSuffix}
     value={displayValue}
@@ -314,7 +313,6 @@
 {:else}
   <md-filled-text-field
     bind:this={root}
-    style="text-align: right"
     type="number"
     suffix-text={iSuffix}
     value={displayValue}
