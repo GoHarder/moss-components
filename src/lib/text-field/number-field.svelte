@@ -5,10 +5,10 @@
 </script>
 
 <script lang="ts">
-  import { type Snippet, getContext } from 'svelte';
+  import { type Snippet, getContext, onMount } from 'svelte';
   import '@material/web/textfield/filled-text-field.js';
   import '@material/web/textfield/outlined-text-field.js';
-  import { debounce, setSlots } from '../internal/index.js';
+  import { debounce, round, setSlots } from '../internal/index.js';
 
   // MARK: Types
   // ------------------------------------------------
@@ -209,20 +209,6 @@
     ...props
   }: Props = $props();
 
-  // MARK: Functions
-  // ------------------------------------------------
-  /**
-   * Rounds a number to a specified increment.
-   * @param num The value to round.
-   * @param inc The increment to round to.
-   */
-  function round(num: number, inc = 1) {
-    if (inc === 0) return num;
-    const dec = `${inc}`.split('.')[1]?.length || 0;
-    const value = Math.round((num + Number.EPSILON) / inc) * inc;
-    return Number(`${Math.round(Number(value + 'e' + dec))}e-${dec}`);
-  }
-
   // MARK: Variables
   // ------------------------------------------------
   let root: MdComp | undefined = $state();
@@ -292,6 +278,17 @@
     const convert = toValue || ((x: number) => x);
     value = convert(root.valueAsNumber);
   }, 1500);
+
+  onMount(() => {
+    const field = root?.shadowRoot?.children;
+    if (!field) return;
+
+    for (const element of field) {
+      const input = element.querySelector('input');
+      if (!input) continue;
+      input.style.textAlign = 'right';
+    }
+  });
 </script>
 
 {#if outlined}
