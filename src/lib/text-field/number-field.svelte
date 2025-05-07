@@ -280,14 +280,14 @@
   }, 1500);
 
   onMount(() => {
-    const field = root?.shadowRoot?.children;
-    if (!field) return;
+    const children = root?.shadowRoot?.children;
+    if (!children) return;
 
-    for (const element of field) {
-      const input = element.querySelector('input');
-      if (!input) continue;
-      input.style.textAlign = 'right';
-    }
+    setTimeout(() => {
+      const textField = Array.from(children)[0];
+      const input = textField.querySelector('input')!;
+      input.style.textAlign = 'end';
+    }, 0);
   });
 </script>
 
