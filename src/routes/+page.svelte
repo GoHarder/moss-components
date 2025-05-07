@@ -78,7 +78,7 @@
   <IconSect /><!-- DONE -->
   <ListSect /><!-- DONE -->
   <MenuSect /><!-- DONE -->
-  <ProgressSect /><!-- NOTE: Needs animation -->
+  <ProgressSect /><!-- DONE -->
   <RadioSect /><!-- DONE -->
   <RippleSect /><!-- DONE -->
   <SelectSect /><!-- DONE -->

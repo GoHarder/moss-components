@@ -22,6 +22,71 @@
   let debug = $state(false);
   let expand = $state(false);
 
+  let value = $state(0);
+  let buffer = $state(0);
+
+  const linearFrames = [
+    { value: 0, buffer: 0, time: 0 },
+    { value: 0.5, buffer: 0.8, time: 1000 },
+    { value: 1, buffer: 1, time: 2000 },
+  ];
+
+  // function round(num: number, inc = 1) {
+  //   if (inc === 0) return num;
+  //   const dec = `${inc}`.split('.')[1]?.length || 0;
+  //   const value = Math.round((num + Number.EPSILON) / inc) * inc;
+  //   return Number(`${Math.round(Number(value + 'e' + dec))}e-${dec}`);
+  // }
+
+  export function round(num: number, inc = 1) {
+    if (inc === 0) return num;
+    const dec = `${inc}`.split('.')[1]?.length || 0;
+    const value = Math.round((num + Number.EPSILON) / inc) * inc;
+    return Number(`${Math.round(Number(value + 'e' + dec))}e-${dec}`);
+  }
+
+  function createFrames() {
+    let value = 0;
+    let buffer = 0;
+    let time = 0;
+    let frames = [{ value: 0, buffer: 0, time: 0 }];
+
+    while (value < 1) {
+      const bAdd = round(Math.random() * 0.1, 0.01);
+      buffer = round(buffer + bAdd, 0.01);
+
+      const vAdd = Math.random() * (buffer - value) + value;
+
+      value = round(vAdd, 0.01);
+
+      time = round(Math.random() * (2000 - 500) + 100);
+
+      if (buffer > 1) buffer = 1;
+      if (value > 1) value = 1;
+
+      frames.push({ value, buffer, time });
+    }
+
+    return frames;
+  }
+
+  $effect(() => {
+    if (!debug) {
+      value = 0;
+      buffer = 0;
+      return;
+    }
+
+    const frames = createFrames();
+
+    const interval = setInterval(() => {
+      const frame = frames.shift();
+      if (!frame) return;
+      value = frame.value;
+      buffer = frame.buffer;
+    }, 1000);
+  });
+
   // MARK: Contexts
   // ------------------------------------------------
   // MARK: Subscriptions
@@ -49,10 +114,10 @@
   {#snippet hero()}
     <Hero>
       <div class="hero">
-        <LinearProgress value={0.5} />
+        <LinearProgress {value} {buffer} />
         <LinearProgress indeterminate={debug} />
         <div>
-          <CircularProgress value={0.5} />
+          <CircularProgress {value} />
         </div>
         <div>
           <CircularProgress indeterminate={debug} />
