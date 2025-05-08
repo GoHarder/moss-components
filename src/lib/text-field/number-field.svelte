@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-  import { type Snippet, getContext, onMount } from 'svelte';
+  import { type Snippet, getContext } from 'svelte';
   import '@material/web/textfield/filled-text-field.js';
   import '@material/web/textfield/outlined-text-field.js';
   import { debounce, round, setSlots } from '../internal/index.js';
@@ -269,17 +269,7 @@
   // ------------------------------------------------
   $effect.pre(() => {
     setSlots(root);
-  });
 
-  // MARK: Events
-  // ------------------------------------------------
-  const oninput = debounce(() => {
-    if (!root) return;
-    const convert = toValue || ((x: number) => x);
-    value = convert(root.valueAsNumber);
-  }, 1500);
-
-  onMount(() => {
     const children = root?.shadowRoot?.children;
     if (!children) return;
 
@@ -289,6 +279,14 @@
       input.style.textAlign = 'end';
     }, 0);
   });
+
+  // MARK: Events
+  // ------------------------------------------------
+  const oninput = debounce(() => {
+    if (!root) return;
+    const convert = toValue || ((x: number) => x);
+    value = convert(root.valueAsNumber);
+  }, 1500);
 </script>
 
 {#if outlined}
