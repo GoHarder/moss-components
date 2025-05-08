@@ -10,7 +10,7 @@
   import { Elevation } from '$lib/elevation/index.js';
   import { IconButton } from '$lib/icon-button/index.js';
   import { Icon } from '$lib/icon/index.js';
-  import { NumberField, TextField } from '$lib/text-field/index.js';
+  import { LengthField, NumberField, TextField } from '$lib/text-field/index.js';
 
   // MARK: Stores
   // ------------------------------------------------
@@ -23,10 +23,13 @@
   // MARK: Variables
   // ------------------------------------------------
   let debug = $state(false);
-  let expand = $state(false);
+  let expand = $state(true);
   let value = $state('');
   let passwordVisible = $state(false);
   let passwordInputType: 'text' | 'password' = $derived(passwordVisible ? 'text' : 'password');
+
+  let lengthTest1: number | undefined = $state();
+  let lengthTest2: number | undefined = $state(92.125);
 
   // MARK: Contexts
   // ------------------------------------------------
@@ -283,6 +286,7 @@
         </div>
       </div>
     </div>
+
     <div class="theming elevated-card">
       <Elevation />
       <h3>Custom</h3>
@@ -308,6 +312,10 @@
         </div>
         <div class="filled-card">
           <h4>Length fields</h4>
+          <div class="length-container">
+            <LengthField label="Rope drop" bind:value={lengthTest1} />
+            <LengthField label="Car width" bind:value={lengthTest2} outlined />
+          </div>
         </div>
       </div>
     </div>
@@ -348,6 +356,12 @@
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 16px;
     align-items: start;
+  }
+
+  .length-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
   }
 
   .theming {
