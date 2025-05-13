@@ -1,6 +1,6 @@
 {
   "name": "@moss/comp",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run prepack",
@@ -111,7 +111,8 @@
     "svelte": "^5.0.0"
   },
   "dependencies": {
-    "@material/web": "^2.2.0"
+    "@material/web": "^2.2.0",
+    "lit": "^3.3.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^4.0.0",

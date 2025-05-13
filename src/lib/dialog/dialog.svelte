@@ -118,3 +118,11 @@
   {@render slotContent?.()}
   {@render slotActions?.()}
 </md-dialog>
+
+<style lang="scss">
+  :global {
+    md-dialog {
+      scrollbar-color: var(--md-sys-color-on-surface-variant) var(--md-sys-color-surface-container-high);
+    }
+  }
+</style>
