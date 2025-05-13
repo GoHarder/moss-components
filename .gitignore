@@ -1,5 +1,8 @@
 node_modules
 
+scss
+.local
+
 .vscode/*
 # !.vscode/settings.json
 
