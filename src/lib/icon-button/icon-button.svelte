@@ -1,9 +1,12 @@
-<script lang="ts">
-  import { type Snippet, onDestroy, onMount } from 'svelte';
+<script lang="ts" module>
   import '@material/web/iconbutton/filled-icon-button.js';
   import '@material/web/iconbutton/filled-tonal-icon-button.js';
   import '@material/web/iconbutton/icon-button.js';
   import '@material/web/iconbutton/outlined-icon-button.js';
+</script>
+
+<script lang="ts">
+  import { type Snippet, onDestroy, onMount } from 'svelte';
   import { setSlots } from '../internal/index.js';
 
   // MARK: Types

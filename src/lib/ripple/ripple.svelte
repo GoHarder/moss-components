@@ -1,6 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/ripple/ripple';
+</script>
 
+<script lang="ts">
   // MARK: Types
   // ------------------------------------------------
   type Props = {

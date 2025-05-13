@@ -1,5 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/select/select-option.js';
+</script>
+
+<script lang="ts">
   import { setSlots } from '../internal/index.js';
 
   // MARK: Types

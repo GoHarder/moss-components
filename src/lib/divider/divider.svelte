@@ -1,6 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/divider/divider.js';
+</script>
 
+<script lang="ts">
   // MARK: Types
   // ------------------------------------------------
   type Props = {

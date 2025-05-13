@@ -1,6 +1,9 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/fab/branded-fab.js';
   import '@material/web/fab/fab.js';
+</script>
+
+<script lang="ts">
   import { type Snippet, onDestroy, onMount } from 'svelte';
 
   // MARK: Types

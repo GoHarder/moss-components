@@ -1,6 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/checkbox/checkbox.js';
+</script>
 
+<script lang="ts">
   // MARK: Types
   // ------------------------------------------------
   import type { MdCheckbox } from '@material/web/checkbox/checkbox.js';

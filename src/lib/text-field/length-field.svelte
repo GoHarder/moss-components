@@ -1,4 +1,7 @@
 <script lang="ts" module>
+  import '../internal/text-field/filled-length-field.js';
+  import '../internal/text-field/outlined-length-field.js';
+
   import { type ComponentSettings } from '../internal/index.js';
   let context = false;
   let settings: ComponentSettings['textField'] | undefined;
@@ -6,8 +9,7 @@
 
 <script lang="ts">
   import { type Snippet, getContext } from 'svelte';
-  import '../internal/text-field/filled-length-field.js';
-  import '../internal/text-field/outlined-length-field.js';
+
   import { debounce, round, setSlots } from '../internal/index.js';
 
   // MARK: Types

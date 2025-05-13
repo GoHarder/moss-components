@@ -1,4 +1,6 @@
 <script lang="ts" module>
+  import '@material/web/select/filled-select.js';
+  import '@material/web/select/outlined-select.js';
   import { type ComponentSettings } from '../internal/index.js';
   let context = false;
   let reducedMotion: boolean | undefined;
@@ -6,8 +8,6 @@
 </script>
 
 <script lang="ts">
-  import '@material/web/select/filled-select.js';
-  import '@material/web/select/outlined-select.js';
   import { type Snippet, getContext, onDestroy, onMount } from 'svelte';
 
   // MARK: Types

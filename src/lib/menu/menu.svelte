@@ -1,10 +1,10 @@
 <script lang="ts" module>
+  import '@material/web/menu/menu.js';
   let context = false;
   let reducedMotion: boolean | undefined;
 </script>
 
 <script lang="ts">
-  import '@material/web/menu/menu.js';
   import { type Snippet, getContext, onDestroy, onMount } from 'svelte';
 
   // MARK: Types

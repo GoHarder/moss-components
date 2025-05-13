@@ -1,5 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/switch/switch.js';
+</script>
+
+<script lang="ts">
   import { onDestroy, onMount } from 'svelte';
 
   // MARK: Types

@@ -1,5 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/chips/assist-chip.js';
+</script>
+
+<script lang="ts">
   import { type Snippet, onDestroy, onMount } from 'svelte';
   import { setSlots } from '../internal/index.js';
 

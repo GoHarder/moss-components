@@ -1,10 +1,10 @@
 <script lang="ts" module>
+  import '@material/web/dialog/dialog.js';
   let context = false;
   let reducedMotion: boolean | undefined;
 </script>
 
 <script lang="ts">
-  import '@material/web/dialog/dialog.js';
   import { setSlots } from '../internal/index.js';
   import { type Snippet, getContext, onDestroy, onMount } from 'svelte';
 

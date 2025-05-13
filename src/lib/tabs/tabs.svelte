@@ -1,6 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/tabs/tabs.js';
+</script>
 
+<script lang="ts">
   // MARK: Types
   // ------------------------------------------------
   import { type Snippet, onDestroy, onMount } from 'svelte';
@@ -15,28 +17,14 @@
     [key: string]: any;
   };
 
-  // MARK: Components
-  // ------------------------------------------------
-  // MARK: Stores
-  // ------------------------------------------------
   // MARK: Properties
   // ------------------------------------------------
   let { children, index: activeTabIndex = $bindable(undefined), ...props }: Props = $props();
 
-  // MARK: Methods
-  // ------------------------------------------------
-  // MARK: Constants
-  // ------------------------------------------------
   // MARK: Variables
   // ------------------------------------------------
   let root: MdTabs | undefined = $state();
 
-  // MARK: Contexts
-  // ------------------------------------------------
-  // MARK: Subscriptions
-  // ------------------------------------------------
-  // MARK: Reactive Rules
-  // ------------------------------------------------
   // MARK: Events
   // ------------------------------------------------
   function onchange(_event: Event) {

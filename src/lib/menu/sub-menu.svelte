@@ -1,5 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/menu/sub-menu.js';
+</script>
+
+<script lang="ts">
   import { setSlots } from '../internal/index.js';
 
   // MARK: Types

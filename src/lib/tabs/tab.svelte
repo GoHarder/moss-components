@@ -1,6 +1,9 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/tabs/primary-tab.js';
   import '@material/web/tabs/secondary-tab.js';
+</script>
+
+<script lang="ts">
   import { setSlots } from '../internal/index.js';
 
   // MARK: Types

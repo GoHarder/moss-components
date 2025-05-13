@@ -1,6 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/list/list.js';
+</script>
 
+<script lang="ts">
   // MARK: Types
   // ------------------------------------------------
   import { type Snippet } from 'svelte';

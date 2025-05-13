@@ -1,5 +1,8 @@
-<script lang="ts">
+<script lang="ts" module>
   import '@material/web/menu/menu-item.js';
+</script>
+
+<script lang="ts">
   import { setSlots } from '../internal/index.js';
   import { type Snippet, onDestroy, onMount } from 'svelte';
 

@@ -1,6 +1,9 @@
+<script lang="ts" module>
+  import '@material/web/icon/icon.js';
+</script>
+
 <script lang="ts">
   import { type Snippet } from 'svelte';
-  import '@material/web/icon/icon.js';
 
   // MARK: Types
   // ------------------------------------------------

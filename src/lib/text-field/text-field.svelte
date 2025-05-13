@@ -1,4 +1,7 @@
 <script lang="ts" module>
+  import '@material/web/textfield/filled-text-field.js';
+  import '@material/web/textfield/outlined-text-field.js';
+
   import { type ComponentSettings } from '../internal/index.js';
   let context = false;
   let settings: ComponentSettings['textField'] | undefined;
@@ -6,8 +9,7 @@
 
 <script lang="ts">
   import { type Snippet, getContext } from 'svelte';
-  import '@material/web/textfield/filled-text-field.js';
-  import '@material/web/textfield/outlined-text-field.js';
+
   import { debounce, setSlots } from '../internal/index.js';
 
   // MARK: Types
