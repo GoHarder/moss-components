@@ -57,10 +57,6 @@ importers:
       vite:
         specifier: ^6.0.0
         version: 6.3.5(sass-embedded@1.88.0)(sass@1.88.0)
-    optionalDependencies:
-      '@rollup/rollup-linux-x64-gnu':
-        specifier: '*'
-        version: 4.40.2
 
 packages:
 
