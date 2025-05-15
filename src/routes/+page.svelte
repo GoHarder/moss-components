@@ -66,26 +66,26 @@
 </script>
 
 <main>
-  <ButtonSect /><!-- DONE -->
-  <CheckboxSect /><!-- DONE -->
-  <ChipSect /><!-- DONE -->
-  <DialogSect /><!-- DONE -->
-  <DividerSect /><!-- DONE -->
-  <ElevationSect /><!-- DONE -->
-  <FabSect /><!-- DONE -->
-  <FocusRingSect /><!-- DONE -->
-  <IconButtonSect /><!-- DONE -->
-  <IconSect /><!-- DONE -->
-  <ListSect /><!-- DONE -->
-  <MenuSect /><!-- DONE -->
-  <ProgressSect /><!-- DONE -->
-  <RadioSect /><!-- DONE -->
-  <RippleSect /><!-- DONE -->
-  <SelectSect /><!-- DONE -->
-  <SliderSect /><!-- DONE -->
-  <SwitchSect /><!-- DONE -->
-  <TabsSect /><!-- DONE -->
-  <TextFieldSect /><!-- NOTE: Will need NumberField and LengthField -->
+  <ButtonSect />
+  <CheckboxSect />
+  <ChipSect />
+  <DialogSect />
+  <DividerSect />
+  <ElevationSect />
+  <FabSect />
+  <FocusRingSect />
+  <IconButtonSect />
+  <IconSect />
+  <ListSect />
+  <MenuSect />
+  <ProgressSect />
+  <RadioSect />
+  <RippleSect />
+  <SelectSect />
+  <SliderSect />
+  <SwitchSect />
+  <TabsSect />
+  <TextFieldSect />
 </main>
 
 <style>
