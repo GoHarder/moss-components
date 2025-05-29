@@ -32,6 +32,8 @@
     onclick?: (event: HTMLElementEventMap['click']) => any;
     /** The variant of the button. */
     variant?: '' | 'filled' | 'tonal' | 'outlined';
+    /** The tooltip text. */
+    tooltip?: string;
     /** Disables the icon button and makes it non-interactive. */
     disabled?: boolean;
     /** Sets the underlying `HTMLAnchorElement`'s `href` resource attribute. */
@@ -58,7 +60,15 @@
 
   // MARK: Properties
   // ------------------------------------------------
-  let { children, slotSelected, onclick, variant = '', toggle, selected = $bindable(false), ...props }: Props = $props();
+  let { children, slotSelected, onclick, variant = '', tooltip, toggle, selected = $bindable(false), ...props }: Props = $props();
+
+  // MARK: Components
+  // ------------------------------------------------
+  import { PlainTooltip } from '../tooltip/index.js';
+
+  // MARK: Constants
+  // ------------------------------------------------
+  const tooltipId = `plain-tooltip-${crypto.randomUUID()}`;
 
   // MARK: Variables
   // ------------------------------------------------
@@ -92,23 +102,27 @@
 </script>
 
 {#if variant === 'filled'}
-  <md-filled-icon-button bind:this={root} {toggle} {selected} {...props}>
+  <md-filled-icon-button bind:this={root} {toggle} {selected} aria-describedby={tooltipId} {...props}>
     {@render slotSelected?.()}
     {@render children()}
   </md-filled-icon-button>
 {:else if variant === 'tonal'}
-  <md-filled-tonal-icon-button bind:this={root} {toggle} {selected} {...props}>
+  <md-filled-tonal-icon-button bind:this={root} {toggle} {selected} aria-describedby={tooltipId} {...props}>
     {@render slotSelected?.()}
     {@render children()}
   </md-filled-tonal-icon-button>
 {:else if variant === 'outlined'}
-  <md-outlined-icon-button bind:this={root} {toggle} {selected} {...props}>
+  <md-outlined-icon-button bind:this={root} {toggle} {selected} aria-describedby={tooltipId} {...props}>
     {@render slotSelected?.()}
     {@render children()}
   </md-outlined-icon-button>
 {:else}
-  <md-icon-button bind:this={root} {toggle} {selected} {...props}>
+  <md-icon-button bind:this={root} {toggle} {selected} aria-describedby={tooltipId} {...props}>
     {@render slotSelected?.()}
     {@render children()}
   </md-icon-button>
+{/if}
+
+{#if tooltip}
+  <PlainTooltip id={tooltipId}>{tooltip}</PlainTooltip>
 {/if}

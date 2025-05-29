@@ -47,18 +47,13 @@
   // ------------------------------------------------
   // MARK: Variables
   // ------------------------------------------------
-  let root: HTMLElement | undefined = $state();
-
   // MARK: Contexts
   // ------------------------------------------------
   // MARK: Subscriptions
   // ------------------------------------------------
   // MARK: Reactive Rules
   // ------------------------------------------------
-  // $effect(() => {
-  //   if (!expand) return;
-  //   root?.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  // });
+  let contentTooltip = $derived(expand ? 'Collapse' : 'Expand');
 
   // MARK: Events
   // ------------------------------------------------
@@ -66,18 +61,18 @@
   // ------------------------------------------------
 </script>
 
-<section bind:this={root} class={{ expand }} {...props}>
+<section class={{ expand }} {...props}>
   <Elevation />
   <header>
     <div class="row-1">
       {@render header()}
       <div>
         {#if !plain}
-          <IconButton bind:selected={debug} toggle>
+          <IconButton bind:selected={debug} toggle tooltip="Debug">
             <Icon>bug_report</Icon>
           </IconButton>
         {/if}
-        <IconButton bind:selected={expand} toggle>
+        <IconButton bind:selected={expand} toggle tooltip={contentTooltip}>
           <Icon>expand_content</Icon>
           {#snippet slotSelected()}
             <Icon slot="selected">collapse_content</Icon>

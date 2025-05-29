@@ -26,6 +26,7 @@
   import SwitchSect from './lib/switch-sect.svelte';
   import TabsSect from './lib/tabs-sect.svelte';
   import TextFieldSect from './lib/text-field-sect.svelte';
+  import TooltipSect from './lib/tooltip-sect.svelte';
 
   // MARK: Stores
   // ------------------------------------------------
@@ -66,6 +67,8 @@
 </script>
 
 <main>
+  <TooltipSect />
+
   <ButtonSect />
   <CheckboxSect />
   <ChipSect />
