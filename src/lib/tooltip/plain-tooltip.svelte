@@ -17,7 +17,7 @@
   // ------------------------------------------------
   let { children, id, class: propClass }: Props = $props();
 
-  // MARK: Variables
+  // MARK: State
   // ------------------------------------------------
   let root: HTMLDivElement | undefined = $state();
   let mdComp: MDCTooltip | undefined = $state();

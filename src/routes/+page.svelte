@@ -22,6 +22,7 @@
   import RadioSect from './lib/radio-sect.svelte';
   import RippleSect from './lib/ripple-sect.svelte';
   import SelectSect from './lib/select-sect.svelte';
+  import SnackbarSect from './lib/snackbar-sect.svelte';
   import SliderSect from './lib/slider-sect.svelte';
   import SwitchSect from './lib/switch-sect.svelte';
   import TabsSect from './lib/tabs-sect.svelte';
@@ -67,8 +68,7 @@
 </script>
 
 <main>
-  <TooltipSect />
-
+  <SnackbarSect />
   <ButtonSect />
   <CheckboxSect />
   <ChipSect />
@@ -89,6 +89,7 @@
   <SwitchSect />
   <TabsSect />
   <TextFieldSect />
+  <TooltipSect />
 </main>
 
 <style>
