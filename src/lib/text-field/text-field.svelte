@@ -44,6 +44,8 @@
     onfocus?: (event: FocusEvent) => any;
     /** Render an outlined text field. */
     outlined?: boolean;
+    /** The debounce timeout in milliseconds. */
+    debounce?: number;
     /**
      * Gets or sets whether or not the text field is in a visually invalid state.
      * This error state overrides the error state controlled by `reportValidity()`.
@@ -215,6 +217,7 @@
     slotLeadingIcon,
     slotTrailingIcon,
     outlined = false,
+    debounce: debounceMs = 1500,
     'no-asterisk': noAsterisk,
     'no-spinner': noSpinner,
     value = $bindable(),
@@ -248,7 +251,7 @@
   const oninput = debounce(() => {
     if (!root) return;
     value = root.value;
-  }, 1500);
+  }, debounceMs);
 </script>
 
 {#if outlined}
