@@ -5,7 +5,7 @@
 </script>
 
 <script lang="ts">
-  import { debounce, round } from '../internal/index.js';
+  import { debounce, round, floor } from '../internal/index.js';
   import { getContext } from 'svelte';
 
   // MARK: Types
@@ -90,8 +90,10 @@
   // MARK: Functions
   // ------------------------------------------------
   function valueFt(value: number | undefined) {
+    console.log(value);
+
     if (value === undefined) return '';
-    return `${round(value / 12)}`;
+    return `${floor(value / 12)}`;
   }
 
   function valueIn(value: number | undefined) {

@@ -31,6 +31,11 @@
   let lengthTest1: number | undefined = $state();
   let lengthTest2: number | undefined = $state(92.125);
 
+  $inspect(lengthTest1).with((type, value) => {
+    if (!debug) return;
+    console.log(type, value);
+  });
+
   // MARK: Contexts
   // ------------------------------------------------
   // MARK: Subscriptions

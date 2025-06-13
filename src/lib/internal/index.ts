@@ -88,3 +88,10 @@ export function round(num: number, inc = 1) {
   const value = Math.round((num + Number.EPSILON) / inc) * inc;
   return Number(`${Math.round(Number(value + 'e' + dec))}e-${dec}`);
 }
+
+export function floor(num: number, inc = 1) {
+  if (inc === 0) return num;
+  const dec = `${inc}`.split('.')[1]?.length || 0;
+  const value = Math.floor((num + Number.EPSILON) / inc) * inc;
+  return Number(`${Math.round(Number(value + 'e' + dec))}e-${dec}`);
+}
