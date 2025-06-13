@@ -90,8 +90,6 @@
   // MARK: Functions
   // ------------------------------------------------
   function valueFt(value: number | undefined) {
-    console.log(value);
-
     if (value === undefined) return '';
     return `${floor(value / 12)}`;
   }
