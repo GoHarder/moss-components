@@ -148,3 +148,12 @@
     {@render children?.()}
   </md-filled-select>
 {/if}
+
+<style lang="scss">
+  :global {
+    md-outlined-select,
+    md-filled-select {
+      scrollbar-color: var(--md-sys-color-on-surface-variant) var(--md-sys-color-surface-container);
+    }
+  }
+</style>

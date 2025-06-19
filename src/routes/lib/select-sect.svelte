@@ -17,6 +17,8 @@
   // ------------------------------------------------
   // MARK: Constants
   // ------------------------------------------------
+  const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+
   // MARK: Variables
   // ------------------------------------------------
   let debug = $state(false);
@@ -87,9 +89,9 @@
         </Select>
       {:else}
         <Select label="Label" value="2" outlined required>
-          <Option value="1">Item 1</Option>
-          <Option value="2">Item 2</Option>
-          <Option value="3">Item 3</Option>
+          {#each numbers as i}
+            <Option value={i.toString()}>Item {i}</Option>
+          {/each}
         </Select>
       {/if}
     </Hero>
