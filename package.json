@@ -98,6 +98,10 @@
       "types": "./dist/snackbar/index.d.ts",
       "svelte": "./dist/snackbar/index.js"
     },
+    "./svg": {
+      "types": "./dist/svg/index.d.ts",
+      "svelte": "./dist/svg/index.js"
+    },
     "./switch": {
       "types": "./dist/switch/index.d.ts",
       "svelte": "./dist/switch/index.js"

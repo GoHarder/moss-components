@@ -30,8 +30,8 @@
   import TextFieldSect from './lib/text-field-sect.svelte';
   import TooltipSect from './lib/tooltip-sect.svelte';
 
-  import { Rail, RailItem } from '$lib/navigation/index.js';
-  import { Icon } from '$lib/icon/index.js';
+  // import { Rail, RailItem } from '$lib/navigation/index.js';
+  // import { Icon } from '$lib/icon/index.js';
 
   // MARK: Stores
   // ------------------------------------------------
