@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg height="24" width="24" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+   <path d="M 4,40 V 8 H 44 V 40 Z M 7,37 H 41 V 11 H 7 Z m 0,0 V 11 Z" />
+   <path
+      d="m 4,8 v 3 26 3 h 9.492188 3 7.033203 3 H 44 V 37 11 8 Z m 3,3 H 41 V 37 H 26.525391 V 25.628906 h -1.671875 -1.328125 -7.033203 -3 V 37 H 7 Z m 9.492188,17.628906 h 7.033203 V 37 h -7.033203 z" />
+</svg>

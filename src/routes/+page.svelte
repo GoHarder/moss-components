@@ -23,11 +23,15 @@
   import RippleSect from './lib/ripple-sect.svelte';
   import SelectSect from './lib/select-sect.svelte';
   import SnackbarSect from './lib/snackbar-sect.svelte';
+  import SvgSect from './lib/svg-sect.svelte';
   import SliderSect from './lib/slider-sect.svelte';
   import SwitchSect from './lib/switch-sect.svelte';
   import TabsSect from './lib/tabs-sect.svelte';
   import TextFieldSect from './lib/text-field-sect.svelte';
   import TooltipSect from './lib/tooltip-sect.svelte';
+
+  import { Rail, RailItem } from '$lib/navigation/index.js';
+  import { Icon } from '$lib/icon/index.js';
 
   // MARK: Stores
   // ------------------------------------------------
@@ -67,7 +71,24 @@
   });
 </script>
 
+<!-- <Rail>
+  <RailItem>
+    <Icon>home</Icon>
+  </RailItem>
+  <RailItem>
+    <Icon>dashboard</Icon>
+  </RailItem>
+  <RailItem>
+    <Icon>calendar_month</Icon>
+  </RailItem>
+  <RailItem>
+    <Icon>person</Icon>
+  </RailItem>
+</Rail> -->
+
 <main>
+  <SvgSect />
+
   <SnackbarSect />
   <ButtonSect />
   <CheckboxSect />
