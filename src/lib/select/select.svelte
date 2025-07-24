@@ -108,6 +108,13 @@
     outlined = settings.variant === 'outlined' || outlined;
   }
 
+  // MARK: Effects
+  // ------------------------------------------------
+  $effect(() => {
+    if (!root || value === undefined) return;
+    selected = options.at(root.selectedIndex);
+  });
+
   // MARK: Events
   // ------------------------------------------------
   async function onchange(_event: Event) {
@@ -119,17 +126,16 @@
     } else {
       value = root.value;
     }
-
-    selected = options.at(root.selectedIndex);
   }
 
   // MARK: Lifecycle
   // ------------------------------------------------
-  onMount(() => {
+  onMount(async () => {
     if (reducedMotion) quick = true;
     if (!root) return;
     root.addEventListener('change', onchange);
     if (!value) return;
+    await root.getUpdateComplete();
     selected = options.at(root.selectedIndex);
   });
 

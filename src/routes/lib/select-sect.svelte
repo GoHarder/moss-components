@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   // MARK: Types
   // ------------------------------------------------
   // MARK: Components
@@ -17,7 +19,7 @@
   // ------------------------------------------------
   // MARK: Constants
   // ------------------------------------------------
-  const numbers = Array.from({ length: 20 }, (_, i) => i + 1);
+  const numbers = Array.from({ length: 6 }, (_, i) => i + 1);
 
   // MARK: Variables
   // ------------------------------------------------
@@ -33,23 +35,21 @@
     { name: '53-011', diameter: 25 },
   ];
 
-  let value: string | undefined = $state();
+  let value: string | undefined = $state('43-015');
   let selected: (typeof options)[number] | undefined = $state();
-  let diameter = $derived(selected ? selected.diameter : undefined);
-
   let roping: number | undefined = $state();
 
-  $inspect(value).with((type, value) => {
+  $inspect(value, selected).with((type, value, selected) => {
     if (!debug) return;
-    console.log('value:   ', type, value);
-    console.log('selected:', $state.snapshot(selected));
-    console.log('diameter:', $state.snapshot(diameter));
+    console.log('status:  ', type);
+    console.log('value:   ', value);
+    console.log('selected:', selected);
   });
 
-  $inspect(roping).with((type, roping) => {
-    if (!debug) return;
-    console.log('roping:  ', type, roping, typeof roping);
-  });
+  // $inspect(roping).with((type, roping) => {
+  //   if (!debug) return;
+  //   console.log('roping:  ', type, roping, typeof roping);
+  // });
 
   // MARK: Contexts
   // ------------------------------------------------
@@ -61,6 +61,12 @@
   // ------------------------------------------------
   // MARK: Lifecycle
   // ------------------------------------------------
+  // onMount(() => {
+  //   setTimeout(() => {
+  //     console.log('input test');
+  //     value = '33-009';
+  //   }, 10000);
+  // });
 </script>
 
 <Section bind:expand bind:debug>
@@ -69,7 +75,10 @@
   {/snippet}
 
   {#snippet supportingText()}
-    <p>Select menus display a list of choices on temporary surfaces and display the currently selected menu item above the menu.</p>
+    <p>
+      Select menus display a list of choices on temporary surfaces and display the currently selected menu
+      item above the menu.
+    </p>
   {/snippet}
 
   {#snippet hero()}
