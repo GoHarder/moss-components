@@ -112,7 +112,7 @@
   // ------------------------------------------------
   $effect(() => {
     if (!root || value === undefined) return;
-    selected = options.at(root.selectedIndex);
+    selected = options[root.selectedIndex];
   });
 
   // MARK: Events
@@ -134,9 +134,9 @@
     if (reducedMotion) quick = true;
     if (!root) return;
     root.addEventListener('change', onchange);
-    if (!value) return;
+    if (value === undefined) return;
     await root.getUpdateComplete();
-    selected = options.at(root.selectedIndex);
+    selected = options[root.selectedIndex];
   });
 
   onDestroy(() => {
