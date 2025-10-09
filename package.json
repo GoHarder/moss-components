@@ -141,7 +141,7 @@
     "@material/tooltip": "^14.0.0",
     "@material/touch-target": "^14.0.0",
     "@material/typography": "^14.0.0",
-    "@material/web": "^2.3.0",
+    "@material/web": "^2.4.0",
     "lit": "^3.3.0"
   },
   "devDependencies": {

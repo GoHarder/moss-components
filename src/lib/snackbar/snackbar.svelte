@@ -8,6 +8,8 @@
   type Props = {
     /** The child elements to render. */
     children: Snippet;
+    /** Actions items for the snackbar. */
+    slot_actions?: Snippet;
     /**
      * Gets/sets the automatic dismiss timeout in milliseconds.
      * Value must be between 4000 and 10000 (or -1 to disable
@@ -25,7 +27,7 @@
   // ------------------------------------------------
   // MARK: Properties
   // ------------------------------------------------
-  let { children, timeout, open = $bindable(false) }: Props = $props();
+  let { children, slot_actions, timeout, open = $bindable(false) }: Props = $props();
 
   // MARK: Methods
   // ------------------------------------------------
@@ -92,12 +94,12 @@
     <div class="mdc-snackbar__label" aria-atomic="false">
       {@render children()}
     </div>
-    <!-- <div class="mdc-snackbar__actions" aria-atomic="true">
-      <button type="button" class="mdc-button mdc-snackbar__action">
-        <div class="mdc-button__ripple"></div>
-        <span class="mdc-button__label">Retry</span>
-      </button>
-    </div> -->
+
+    {#if slot_actions}
+      <div class="mdc-snackbar__actions" aria-atomic="true">
+        {@render slot_actions()}
+      </div>
+    {/if}
   </div>
 </aside>
 
@@ -113,5 +115,13 @@
     --mdc-typography-body2-line-height: var(--md-sys-typescale-body-medium-line-height);
     --mdc-typography-body2-font-weight: var(--md-sys-typescale-body-medium-weight);
     --mdc-typography-body2-letter-spacing: var(--md-sys-typescale-body-medium-tracking);
+
+    md-text-button {
+      --md-sys-color-primary: var(--md-sys-color-inverse-primary, #6750a4);
+    }
+
+    md-icon {
+      color: var(--md-sys-color-inverse-on-surface);
+    }
   }
 </style>

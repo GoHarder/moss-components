@@ -33,7 +33,7 @@
   // MARK: Events
   // ------------------------------------------------
   function onclick() {
-    open = true;
+    open = !open;
   }
 
   // MARK: Lifecycle
@@ -56,7 +56,13 @@
         <Icon data-slot="icon">check</Icon>
       </Button>
 
-      <Snackbar bind:open>Password reset</Snackbar>
+      <Snackbar bind:open timeout={-1}>
+        Offline
+        {#snippet slot_actions()}
+          <Button {onclick}>Ok</Button>
+          <Icon>cloud_off</Icon>
+        {/snippet}
+      </Snackbar>
     </Hero>
   {/snippet}
 

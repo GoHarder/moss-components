@@ -9,7 +9,6 @@
 
 <script lang="ts">
   import { type Snippet, getContext } from 'svelte';
-
   import { debounce, setSlots } from '../internal/index.js';
 
   // MARK: Types
