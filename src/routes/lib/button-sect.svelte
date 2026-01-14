@@ -61,12 +61,12 @@
     <div class="types elevated-card">
       <Elevation />
       <h3>Types</h3>
-      <Button variant="elevated">
+      <Button variant="elevated" href="/">
         <Icon data-slot="icon">add</Icon>
         Elevated
       </Button>
-      <Button variant="filled">Filled</Button>
-      <Button variant="tonal">Tonal</Button>
+      <Button variant="filled" href="#/checkbox?param=value">Filled</Button>
+      <Button variant="tonal" href="#/chip">Tonal</Button>
       <Button variant="outlined">Outlined</Button>
       <Button>Text</Button>
     </div>

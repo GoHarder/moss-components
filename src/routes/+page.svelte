@@ -29,7 +29,12 @@
   import TabsSect from './lib/tabs-sect.svelte';
   import TextFieldSect from './lib/text-field-sect.svelte';
   import TooltipSect from './lib/tooltip-sect.svelte';
-  // import { Rail, RailItem } from '$lib/navigation/index.js';
+  import TableSect from './lib/table-sect.svelte';
+
+  // import { Icon } from '$lib/icon/index.js';
+  // import { NavItem, NavBar, NavRail } from '$lib/navigation/index.js';
+
+  // import { Router, Route } from '$lib/router/index.js';
 
   // MARK: Stores
   // ------------------------------------------------
@@ -55,6 +60,38 @@
     },
   });
 
+  let compact = $state(false);
+
+  function sleep(ms: number) {
+    return new Promise((res) => setTimeout(res, ms));
+  }
+
+  // const chipRoute = new Route({
+  //   component: ChipSect,
+  //   conditions: [
+  //     async () => {
+  //       await sleep(1000);
+  //       return true;
+  //     },
+  //     () => true,
+  //     async () => {
+  //       await sleep(10000);
+  //       return false;
+  //     },
+  //   ],
+  // });
+
+  // async function test() {
+  //   console.log(await chipRoute.isValid());
+  // }
+
+  // const routes = {
+  //   '/': ButtonSect,
+  //   '/checkbox': CheckboxSect,
+  //   '/chip': chipRoute,
+  //   '*': DialogSect,
+  // };
+
   // MARK: Subscriptions
   // ------------------------------------------------
   // MARK: Reactive Rules
@@ -69,22 +106,46 @@
   });
 </script>
 
-<!-- <Rail>
-  <RailItem>
-    <Icon>home</Icon>
-  </RailItem>
-  <RailItem>
-    <Icon>dashboard</Icon>
-  </RailItem>
-  <RailItem>
-    <Icon>calendar_month</Icon>
-  </RailItem>
-  <RailItem>
-    <Icon>person</Icon>
-  </RailItem>
-</Rail> -->
+<!-- <Router {routes} />
+
+<NavRail bind:compact>
+  <NavItem active short={compact}>
+    <Icon>article</Icon>
+    <span>Platform</span>
+  </NavItem>
+  <NavItem short={compact}>
+    <Icon>article</Icon>
+    <span>Sling</span>
+  </NavItem>
+  <NavItem short={compact}>
+    <Icon>article</Icon>
+    <span>Counter<wbr />weight</span>
+  </NavItem>
+  <NavItem short={compact}>
+    <Icon>article</Icon>
+    <span>Machine</span>
+  </NavItem>
+  <NavItem short={compact}>
+    <Icon>article</Icon>
+    <span>Rail brackets</span>
+  </NavItem>
+  <NavItem short={compact}>
+    <Icon>article</Icon>
+    <span>Buffers</span>
+  </NavItem>
+  <NavItem short={compact}>
+    <Icon>article</Icon>
+    <span>Hoistway</span>
+  </NavItem>
+  <NavItem short={compact}>
+    <Icon>article</Icon>
+    <span>Over<wbr />head steel</span>
+  </NavItem>
+</NavRail>
+<NavBar></NavBar> -->
 
 <main>
+  <TableSect />
   <SvgSect />
   <SnackbarSect />
   <ButtonSect />
@@ -112,7 +173,7 @@
 
 <style>
   main {
-    /* height: 100dvh; */
+    height: 100dvh;
     display: flex;
     flex-wrap: wrap;
     gap: 16px;

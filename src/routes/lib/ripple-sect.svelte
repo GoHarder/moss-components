@@ -135,7 +135,6 @@ md-ripple.unbounded {
     position: relative;
     width: 80px;
     height: 80px;
-    border-radius: var(--md-sys-shape-corner-medium);
     background-color: transparent;
     border-radius: var(--md-sys-shape-corner-medium);
     border-color: var(--md-sys-color-outline);
