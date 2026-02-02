@@ -23,7 +23,7 @@
   // MARK: Variables
   // ------------------------------------------------
   let debug = $state(false);
-  let expand = $state(false);
+  let expand = $state(true);
   let value = $state('');
   let passwordVisible = $state(false);
   let passwordInputType: 'text' | 'password' = $derived(passwordVisible ? 'text' : 'password');
@@ -305,6 +305,8 @@
             <NumberField label="Car speed" type="speed" value={100} metric outlined no-spinner />
             <NumberField label="Torque" type="torque" value={1} metric outlined no-spinner />
             <NumberField label="Capacity" type="weight" value={1000} metric outlined no-spinner />
+
+            <NumberField label="Price" prefix-text="$" value={90.99} outlined no-spinner />
           </div>
           <CodeBlock lang="svelte">
             {`<NumberField label="Arc of contact" type="angle" value={90} outlined no-spinner />

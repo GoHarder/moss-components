@@ -274,7 +274,16 @@
       <Elevation />
       <h3>Accessibility</h3>
       <span style="position: relative">
-        <TextField {onfocus} {onblur} id="textfield" aria-controls="menu" aria-autocomplete="list" aria-expanded="true" aria-activedescendant="1" value="Ala" />
+        <TextField
+          {onfocus}
+          {onblur}
+          id="textfield"
+          aria-controls="menu"
+          aria-autocomplete="list"
+          aria-expanded="true"
+          aria-activedescendant="1"
+          value="Ala"
+        />
         <Menu id="menu" anchor="textfield" role="listbox" aria-label="states" default-focus="none" bind:open={focused}>
           <MenuItem type="option" id="0">Alabama</MenuItem>
           <Divider role="separator" tabindex="-1" />

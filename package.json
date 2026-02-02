@@ -1,6 +1,6 @@
 {
   "name": "@moss/comp",
-  "version": "0.4.3",
+  "version": "0.4.4",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build && npm run prepack",
@@ -126,14 +126,23 @@
     "@material/animation": "^14.0.0",
     "@material/base": "^14.0.0",
     "@material/button": "^14.0.0",
+    "@material/checkbox": "^14.0.0",
+    "@material/data-table": "^14.0.0",
     "@material/density": "^14.0.0",
     "@material/dom": "^14.0.0",
     "@material/elevation": "^14.0.0",
     "@material/feature-targeting": "^14.0.0",
+    "@material/floating-label": "^14.0.0",
     "@material/focus-ring": "^14.0.0",
     "@material/icon-button": "^14.0.0",
+    "@material/line-ripple": "^14.0.0",
+    "@material/list": "^14.0.0",
+    "@material/menu": "^14.0.0",
+    "@material/menu-surface": "^14.0.0",
+    "@material/notched-outline": "^14.0.0",
     "@material/ripple": "^14.0.0",
     "@material/rtl": "^14.0.0",
+    "@material/select": "^14.0.0",
     "@material/shape": "^14.0.0",
     "@material/snackbar": "^14.0.0",
     "@material/theme": "^14.0.0",
@@ -142,7 +151,8 @@
     "@material/touch-target": "^14.0.0",
     "@material/typography": "^14.0.0",
     "@material/web": "^2.4.0",
-    "lit": "^3.3.0"
+    "lit": "^3.3.0",
+    "regexparam": "^3.0.0"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "^6.0.1",

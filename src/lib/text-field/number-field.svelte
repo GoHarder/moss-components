@@ -218,8 +218,22 @@
   const types = {
     default: { iSuffix: suffix, mSuffix: '', mConvert: 0, mRound: 1, toValue: undefined, toDisplay: undefined },
     angle: { iSuffix: '°', mSuffix: '', mConvert: 0, mRound: 1, toValue: undefined, toDisplay: undefined },
-    area: { iSuffix: 'ft²', mSuffix: 'm²', mConvert: 6.4516e-4, mRound: 1e-4, toValue: (x: number) => round(x * 144, 1e-6), toDisplay: (x: number) => round(x / 144, 1e-2) },
-    percent: { iSuffix: '%', mSuffix: '', mConvert: 0, mRound: 1, toValue: (x: number) => round(x / 100, 1e-3), toDisplay: (x: number) => x * 100 },
+    area: {
+      iSuffix: 'ft²',
+      mSuffix: 'm²',
+      mConvert: 6.4516e-4,
+      mRound: 1e-4,
+      toValue: (x: number) => round(x * 144, 1e-6),
+      toDisplay: (x: number) => round(x / 144, 1e-2),
+    },
+    percent: {
+      iSuffix: '%',
+      mSuffix: '',
+      mConvert: 0,
+      mRound: 1,
+      toValue: (x: number) => round(x / 100, 1e-3),
+      toDisplay: (x: number) => x * 100,
+    },
     // 1 lb/ft² = 0.0421 kg/m²
     // 1 lb/ft² = 144 lb/in²
     pressure: {
@@ -233,7 +247,14 @@
     speed: { iSuffix: 'ft/min', mSuffix: 'm/sec', mConvert: 5.08e-3, mRound: 1e-4, toValue: undefined, toDisplay: undefined },
     // 1 lb/ft = 1.48816394 kg/m
     // 1 lb/ft = 12 lb/in
-    torque: { iSuffix: 'lb/ft', mSuffix: 'kg/m', mConvert: 17.8579, mRound: 1e-4, toValue: (x: number) => round(x / 12, 1e-6), toDisplay: (x: number) => round(x * 12, 1e-4) },
+    torque: {
+      iSuffix: 'lb/ft',
+      mSuffix: 'kg/m',
+      mConvert: 17.8579,
+      mRound: 1e-4,
+      toValue: (x: number) => round(x / 12, 1e-6),
+      toDisplay: (x: number) => round(x * 12, 1e-4),
+    },
     weight: { iSuffix: 'lb', mSuffix: 'kg', mConvert: 0.453592, mRound: 1, toValue: undefined, toDisplay: undefined },
   };
 
@@ -295,6 +316,7 @@
   <md-outlined-text-field
     bind:this={root}
     type="number"
+    prefix-text={prefix}
     suffix-text={iSuffix}
     value={displayValue}
     supporting-text={metricValue}
@@ -311,6 +333,7 @@
   <md-filled-text-field
     bind:this={root}
     type="number"
+    prefix-text={prefix}
     suffix-text={iSuffix}
     value={displayValue}
     supporting-text={metricValue}
