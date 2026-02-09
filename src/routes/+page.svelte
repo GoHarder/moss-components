@@ -29,7 +29,7 @@
   import TabsSect from './lib/tabs-sect.svelte';
   import TextFieldSect from './lib/text-field-sect.svelte';
   import TooltipSect from './lib/tooltip-sect.svelte';
-  import TableSect from './lib/table-sect.svelte';
+  // import TableSect from './lib/table-sect.svelte';
 
   // import { Icon } from '$lib/icon/index.js';
   // import { NavItem, NavBar, NavRail } from '$lib/navigation/index.js';
@@ -145,7 +145,6 @@
 <NavBar></NavBar> -->
 
 <main>
-  <TableSect />
   <SvgSect />
   <SnackbarSect />
   <ButtonSect />
