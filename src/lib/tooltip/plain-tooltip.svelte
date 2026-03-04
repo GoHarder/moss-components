@@ -32,11 +32,12 @@
   });
 
   onDestroy(() => {
+    mdComp?.hide();
     mdComp?.destroy();
   });
 </script>
 
-<div bind:this={root} {id} class={['mdc-tooltip', 'moss-tooltip', propClass]} role="tooltip" aria-hidden="true">
+<div bind:this={root} {id} class={['mdc-tooltip', propClass]} role="tooltip" aria-hidden="true">
   <div class="mdc-tooltip__surface mdc-tooltip__surface-animation">
     <span class="mdc-tooltip__label">{@render children()}</span>
   </div>
@@ -45,7 +46,7 @@
 <style lang="scss" global>
   @use '@material/tooltip';
   @use '@material/tooltip/styles';
-  .moss-tooltip {
+  .mdc-tooltip {
     @include tooltip.fill-color(var(--md-sys-color-inverse-surface));
     @include tooltip.label-ink-color(var(--md-sys-color-inverse-on-surface));
     --mdc-shape-small: var(--md-sys-shape-corner-extra-small);
